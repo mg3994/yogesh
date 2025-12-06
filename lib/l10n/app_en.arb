@@ -1,0 +1,116 @@
+{
+    "@@locale": "en",
+    "appTitle": "My Localized App",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "welcomeMessage": "Welcome back!",
+    "@welcomeMessage": {
+        "description": "The welcome message"
+    },
+    "helloUser": "Hello {userName}",
+    "@helloUser": {
+        "description": "Greeting for the user",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "Bob"
+            }
+        }
+    },
+    "support": "Support",
+    "@support": {
+        "description": "Support link/button text"
+    },
+    "authHeader": "Build Your Dream Home, \n Together",
+    "@authHeader": {
+        "description": "Header text for authentication screen"
+    },
+    "emailInput": "Email Address",
+    "@emailInput": {
+        "description": "Placeholder for email input field"
+    },
+    "passwordInput": "Password",
+    "@passwordInput": {
+        "description": "Placeholder for password input field"
+    },
+    "forgotPassword": "Forgot Password?",
+    "@forgotPassword": {
+        "description": "Link for forgot password"
+    },
+    "continueButton": "Continue",
+    "@continueButton": {
+        "description": "Continue button text"
+    },
+    "or": "or",
+    "@or": {
+        "description": "Separator text between sign-in methods"
+    },
+    "continueWithGoogle": "Continue With Google",
+    "@continueWithGoogle": {
+        "description": "Button to continue with Google"
+    },
+    "continueWithApple": "Continue With Apple",
+    "@continueWithApple": {
+        "description": "Button to continue with Apple"
+    },
+    "continueWithPhone": "Continue With Phone",
+    "@continueWithPhone": {
+        "description": "Button to continue with Phone"
+    },
+    "tandc": "Terms and Conditions",
+    "@tandc": {
+        "description": "Text for Terms and Conditions"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": {
+        "description": "Text for Privacy Policy"
+    },
+    "and": "and",
+    "@and": {
+        "description": "Conjunction 'and'"
+    },
+    "conditionsText": "By continuing, you agree to our {tandc} {and} {privacyPolicy}",
+    "@conditionsText": {
+        "description": "User agreement statement with links to T&C and Privacy Policy",
+        "placeholders": {
+            "tandc": {
+                "type": "String"
+            },
+            "and": {
+                "type": "String"
+            },
+            "privacyPolicy": {
+                "type": "String"
+            }
+        }
+    },
+    "dashboard": "Dashboard",
+    "@dashboard": {
+        "description": "Navigation link/tab for Dashboard"
+    },
+    "marketplace": "Marketplace",
+    "@marketplace": {
+        "description": "Navigation link/tab for Marketplace"
+    },
+    "services": "Services",
+    "@services": {
+        "description": "Navigation link/tab for Services"
+    },
+    "projects": "Projects",
+    "@projects": {
+        "description": "Navigation link/tab for Projects"
+    },
+    "profile": "Profile",
+    "@profile": {
+        "description": "Navigation link/tab for Profile"
+    },
+    "settings": "Settings",
+    "@settings": {
+        "description": "Navigation link/tab for Settings"
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "Logout button text"
+    }
+}

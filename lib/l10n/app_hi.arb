@@ -1,0 +1,116 @@
+{
+    "@@locale": "hi",
+    "appTitle": "मेरा स्थानीयकृत ऐप",
+    "@appTitle": {
+        "description": "The title of the application"
+    },
+    "welcomeMessage": "वापस स्वागत है!",
+    "@welcomeMessage": {
+        "description": "The welcome message"
+    },
+    "helloUser": "नमस्ते {userName}",
+    "@helloUser": {
+        "description": "Greeting for the user",
+        "placeholders": {
+            "userName": {
+                "type": "String",
+                "example": "बॉब"
+            }
+        }
+    },
+    "support": "समर्थन",
+    "@support": {
+        "description": "Support link/button text"
+    },
+    "authHeader": "अपना सपनों का घर, \n मिलकर बनाएं",
+    "@authHeader": {
+        "description": "Header text for authentication screen"
+    },
+    "emailInput": "ईमेल पता",
+    "@emailInput": {
+        "description": "Placeholder for email input field"
+    },
+    "passwordInput": "पासवर्ड",
+    "@passwordInput": {
+        "description": "Placeholder for password input field"
+    },
+    "forgotPassword": "पासवर्ड भूल गए?",
+    "@forgotPassword": {
+        "description": "Link for forgot password"
+    },
+    "continueButton": "जारी रखें",
+    "@continueButton": {
+        "description": "Continue button text"
+    },
+    "or": "या",
+    "@or": {
+        "description": "Separator text between sign-in methods"
+    },
+    "continueWithGoogle": "Google के साथ जारी रखें",
+    "@continueWithGoogle": {
+        "description": "Button to continue with Google"
+    },
+    "continueWithApple": "Apple के साथ जारी रखें",
+    "@continueWithApple": {
+        "description": "Button to continue with Apple"
+    },
+    "continueWithPhone": "फ़ोन के साथ जारी रखें",
+    "@continueWithPhone": {
+        "description": "Button to continue with Phone"
+    },
+    "tandc": "नियम और शर्तें",
+    "@tandc": {
+        "description": "Text for Terms and Conditions"
+    },
+    "privacyPolicy": "गोपनीयता नीति",
+    "@privacyPolicy": {
+        "description": "Text for Privacy Policy"
+    },
+    "and": "और",
+    "@and": {
+        "description": "Conjunction 'and'"
+    },
+    "conditionsText": "जारी रखकर, आप हमारे {tandc} {and} {privacyPolicy} से सहमत होते हैं",
+    "@conditionsText": {
+        "description": "User agreement statement with links to T&C and Privacy Policy",
+        "placeholders": {
+            "tandc": {
+                "type": "String"
+            },
+            "and": {
+                "type": "String"
+            },
+            "privacyPolicy": {
+                "type": "String"
+            }
+        }
+    },
+    "dashboard": "डैशबोर्ड",
+    "@dashboard": {
+        "description": "Navigation link/tab for Dashboard"
+    },
+    "marketplace": "मार्केटप्लेस",
+    "@marketplace": {
+        "description": "Navigation link/tab for Marketplace"
+    },
+    "services": "सेवाएँ",
+    "@services": {
+        "description": "Navigation link/tab for Services"
+    },
+    "projects": "परियोजनाएँ",
+    "@projects": {
+        "description": "Navigation link/tab for Projects"
+    },
+    "profile": "प्रोफ़ाइल",
+    "@profile": {
+        "description": "Navigation link/tab for Profile"
+    },
+    "settings": "सेटिंग्स",
+    "@settings": {
+        "description": "Navigation link/tab for Settings"
+    },
+    "logout": "लॉग आउट",
+    "@logout": {
+        "description": "Logout button text"
+    }
+}
