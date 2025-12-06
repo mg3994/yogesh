@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/auth/application/auth_service.dart';
-import '../../features/auth/presentation/views/home_screen.dart';
+import '../../features/auth/presentation/views/auth_screen.dart';
 import '../../features/dashboard/presentation/views/dashboard_screen.dart';
 import '../../features/marketplace/presentation/views/marketplace_screen.dart';
 import '../../features/services/presentation/views/services_screen.dart';
@@ -53,8 +53,7 @@ class AppRouter {
       // Auth Route (outside shell)
       GoRoute(
         path: '/auth',
-        builder: (context, state) =>
-            const HomeScreen(), // Currently using HomeScreen as Auth entry
+        builder: (context, state) => const AuthScreen(), // Auth entry
       ),
       // App Shell
       StatefulShellRoute.indexedStack(
