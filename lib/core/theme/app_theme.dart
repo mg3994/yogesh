@@ -31,24 +31,29 @@ abstract final class AppTheme {
     required Brightness brightness,
     FlexSchemeColor? flexSchemeColor,
     FlexScheme? flexSchemeEnum,
+    TextTheme Function(TextTheme)? fontTextThemeBuilder,
   }) {
     // 1. Determine if this is a dark theme for text theme calculation
     final bool isDark = brightness == Brightness.dark;
 
     // 2. Define the base ThemeData creator (FlexThemeData.light or FlexThemeData.dark)
     final themeDataFactory = isDark ? FlexThemeData.dark : FlexThemeData.light;
-    
+
     // 3. Get the theme from the default Material ThemeData for context-aware text themes
     final baseTheme = isDark ? ThemeData.dark() : ThemeData.light();
+
+    // 4. Determine the effective font text theme builder
+    final effectiveFontTextThemeBuilder =
+        fontTextThemeBuilder ?? GoogleFonts.interTextTheme;
 
     return themeDataFactory(
       colors: (flexSchemeEnum == FlexScheme.custom) ? flexSchemeColor : null,
       scheme: (flexSchemeEnum != FlexScheme.custom) ? flexSchemeEnum : null,
-      subThemesData:  FlexSubThemesData(
+      subThemesData: FlexSubThemesData(
         interactionEffects: true,
         tintedDisabledControls: true,
         // Only blend colors in dark mode for better contrast/visuals
-        blendOnColors: isDark, 
+        blendOnColors: isDark,
         useM2StyleDividerInM3: true,
         inputDecoratorIsFilled: true,
         inputDecoratorBorderType: FlexInputBorderType.outline,
@@ -58,13 +63,15 @@ abstract final class AppTheme {
       visualDensity: FlexColorScheme.comfortablePlatformDensity,
       cupertinoOverrideTheme: const CupertinoThemeData(applyThemeToAll: true),
 
-      // 4. Apply premium font using Google Fonts
+      // 5. Apply premium font using Google Fonts
       // Pass the base theme's text theme to GoogleFonts to merge and ensure
       // colors/styles match the current brightness (dark or light).
-      textTheme: GoogleFonts.interTextTheme(baseTheme.textTheme),
-      primaryTextTheme: GoogleFonts.interTextTheme(baseTheme.primaryTextTheme),
-      
-      // 5. Add custom extension
+      textTheme: effectiveFontTextThemeBuilder(baseTheme.textTheme),
+      primaryTextTheme: effectiveFontTextThemeBuilder(
+        baseTheme.primaryTextTheme,
+      ),
+
+      // 6. Add custom extension
       extensions: <BrandTheme>[
         BrandTheme(
           isDarkThemeMode: isDark,
@@ -82,11 +89,13 @@ abstract final class AppTheme {
   static ThemeData light({
     FlexSchemeColor? flexSchemeColor,
     FlexScheme? flexSchemeEnum,
+    TextTheme Function(TextTheme)? fontTextThemeBuilder,
   }) {
     return _buildTheme(
       brightness: Brightness.light,
       flexSchemeColor: flexSchemeColor,
       flexSchemeEnum: flexSchemeEnum,
+      fontTextThemeBuilder: fontTextThemeBuilder,
     );
   }
 
@@ -94,11 +103,13 @@ abstract final class AppTheme {
   static ThemeData dark({
     FlexSchemeColor? flexSchemeColor,
     FlexScheme? flexSchemeEnum,
+    TextTheme Function(TextTheme)? fontTextThemeBuilder,
   }) {
     return _buildTheme(
       brightness: Brightness.dark,
       flexSchemeColor: flexSchemeColor,
       flexSchemeEnum: flexSchemeEnum,
+      fontTextThemeBuilder: fontTextThemeBuilder,
     );
   }
 }
