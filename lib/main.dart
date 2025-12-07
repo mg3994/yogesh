@@ -5,7 +5,7 @@ import 'bootstrap.dart' show Bootstrap, runAppAsync;
 import 'dart:async';
 
 void main() {
- return  runZonedGuarded<void>(
+  runZonedGuarded<void>(
     () {
       runAppAsync(() async {
         return const Bootstrap();
