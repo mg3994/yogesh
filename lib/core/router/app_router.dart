@@ -2,12 +2,15 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/auth/application/auth_service.dart';
+import '../../features/auth/domain/models/user_model.dart';
+import 'role_guard.dart';
 import '../../features/auth/presentation/views/auth_screen.dart';
 import '../../features/dashboard/presentation/views/dashboard_screen.dart';
 import '../../features/marketplace/presentation/views/marketplace_screen.dart';
 import '../../features/services/presentation/views/services_screen.dart';
 import '../../features/projects/presentation/views/projects_screen.dart';
 import '../../features/profile/presentation/views/profile_screen.dart';
+import '../../features/agentic/presentation/agentic_screen.dart';
 import '../widgets/scaffold_with_nav_bar.dart';
 
 class AppRouter {
@@ -24,6 +27,8 @@ class AppRouter {
       GlobalKey<NavigatorState>(debugLabel: 'shellProjects');
   static final GlobalKey<NavigatorState> _shellNavigatorProfileKey =
       GlobalKey<NavigatorState>(debugLabel: 'shellProfile');
+  static final GlobalKey<NavigatorState> _shellNavigatorAgenticKey =
+      GlobalKey<NavigatorState>(debugLabel: 'shellAgentic');
 
   static final router = GoRouter(
     navigatorKey: rootNavigatorKey,
@@ -55,6 +60,7 @@ class AppRouter {
         path: '/auth',
         builder: (context, state) => const AuthScreen(), // Auth entry
       ),
+
       // App Shell
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
@@ -113,6 +119,17 @@ class AppRouter {
                 path: '/profile',
                 pageBuilder: (context, state) =>
                     const NoTransitionPage(child: ProfileScreen()),
+              ),
+            ],
+          ),
+          // Agentic
+          StatefulShellBranch(
+            navigatorKey: _shellNavigatorAgenticKey,
+            routes: [
+              GoRoute(
+                path: '/agentic',
+                pageBuilder: (context, state) =>
+                    const NoTransitionPage(child: AgenticScreen()),
               ),
             ],
           ),

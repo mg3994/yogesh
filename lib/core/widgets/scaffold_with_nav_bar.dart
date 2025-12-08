@@ -81,6 +81,11 @@ class ScaffoldWithBottomNavBar extends StatelessWidget {
             selectedIcon: const Icon(Icons.person),
             label: l10n.profile,
           ),
+          NavigationDestination(
+            icon: const Icon(Icons.auto_awesome_outlined),
+            selectedIcon: const Icon(Icons.auto_awesome),
+            label: 'Agentic',
+          ),
         ],
       ),
     );
@@ -145,6 +150,11 @@ class ScaffoldWithNavRail extends StatelessWidget {
                 icon: const Icon(Icons.person_outline),
                 selectedIcon: const Icon(Icons.person),
                 label: Text(l10n.profile),
+              ),
+              NavigationRailDestination(
+                icon: const Icon(Icons.auto_awesome_outlined),
+                selectedIcon: const Icon(Icons.auto_awesome),
+                label: const Text('Agentic'),
               ),
             ],
           ),
